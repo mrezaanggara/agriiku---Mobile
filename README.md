@@ -1,4 +1,4 @@
-# agriiku
+# Agri-iku Mobile
 
 A new Flutter project.
 
