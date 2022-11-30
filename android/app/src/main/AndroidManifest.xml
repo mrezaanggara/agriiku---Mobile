@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fpunila.agriiku">
+    package="com.fpunila.agriiku">    
+    <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="agriiku"
         android:name="${applicationName}"
