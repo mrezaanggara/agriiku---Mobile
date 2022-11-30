@@ -2,6 +2,8 @@ import 'package:agriiku/model/category_model.dart';
 import 'package:agriiku/model/type_model.dart';
 import 'package:agriiku/service/category_service.dart';
 import 'package:agriiku/service/type_service.dart';
+import 'package:agriiku/view/categoryproduct.dart';
+import 'package:agriiku/view/jenisproduct.dart';
 import 'package:agriiku/view/widget/mostviewproduct.dart';
 import 'package:agriiku/view/widget/newproduct.dart';
 import 'package:flutter/material.dart';
@@ -122,7 +124,15 @@ class _HomepageState extends State<Homepage> {
                           itemBuilder: ((context, index) {
                             Category? c = category![index];
                             return TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (BuildContext context) =>
+                                              CategoryProduct(
+                                                  keyword: (c.kategori ?? ''),
+                                                  key: ValueKey(c.kategori))));
+                                },
                                 child: Text(
                                   c.kategori ?? "",
                                   style: const TextStyle(fontSize: 10),
@@ -162,7 +172,15 @@ class _HomepageState extends State<Homepage> {
                           itemBuilder: ((context, index) {
                             Type? t = type![index];
                             return TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (BuildContext context) =>
+                                            JenisProduct(
+                                                keyword: (t.jenis ?? ''),
+                                                key: ValueKey(t.jenis))));
+                              },
                               child: Text(
                                 t.jenis ?? "",
                                 style: const TextStyle(fontSize: 10),

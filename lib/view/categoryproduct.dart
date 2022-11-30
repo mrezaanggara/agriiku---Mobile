@@ -1,20 +1,21 @@
+import 'package:flutter/material.dart';
 import 'package:agriiku/model/allproduct_model.dart';
 import 'package:agriiku/style/text_style.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import 'detail/detailproduct.dart';
 
-class Allproducts extends StatefulWidget {
-  const Allproducts({super.key});
+class CategoryProduct extends StatefulWidget {
+  final String keyword;
+  const CategoryProduct({required this.keyword, Key? key}) : super(key: key);
 
   @override
-  State<Allproducts> createState() => _AllproductsState();
+  State<CategoryProduct> createState() => _CategoryProductState();
 }
 
-class _AllproductsState extends State<Allproducts> {
+class _CategoryProductState extends State<CategoryProduct> {
   int currentPage = 1;
   int limit = 6;
   List<Product> product = [];
@@ -27,7 +28,7 @@ class _AllproductsState extends State<Allproducts> {
     }
 
     final Uri uri = Uri.parse(
-        "http://172.18.10.139/agrii-ku/api/product/semuaproduk?pages=$currentPage&limit=$limit");
+        "http://172.18.10.139/agrii-ku/api/product/bycategory?pages=$currentPage&limit=$limit&keyword=${widget.keyword}");
     final response = await http.get(uri);
     if (response.statusCode == 200) {
       final result = productDataFromJson(response.body);
@@ -47,6 +48,9 @@ class _AllproductsState extends State<Allproducts> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text('Kategori Produk : ${widget.keyword}'),
+      ),
       body: SmartRefresher(
         controller: refreshController,
         enablePullUp: true,

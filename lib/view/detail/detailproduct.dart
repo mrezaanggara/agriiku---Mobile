@@ -72,7 +72,7 @@ class _DetailProductState extends State<DetailProduct> {
                                 itemBuilder: ((context, index, realIndex) {
                                   g = p!.gambar?[index];
                                   String url =
-                                      "http://172.18.10.95/agrii-ku/data/images/product/";
+                                      "http://172.18.10.139/agrii-ku/data/images/product/";
                                   return Stack(
                                     children: <Widget>[
                                       Container(
