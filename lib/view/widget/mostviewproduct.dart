@@ -1,5 +1,6 @@
 import 'package:agriiku/model/product_model.dart';
 import 'package:agriiku/service/product_service.dart';
+import 'package:agriiku/style/shimmer.dart';
 import 'package:agriiku/style/text_style.dart';
 import 'package:agriiku/view/detail/detailproduct.dart';
 import 'package:flutter/material.dart';
@@ -27,12 +28,15 @@ class _MostViewProductState extends State<MostViewProduct> {
         builder: (context, snapshot) {
           final List<Product>? product = snapshot.data;
           return snapshot.hasError
-              ? Center(
-                  child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [Text("Server sedang bermasalah.")],
-                ))
+              ? Container(
+                  height: 350,
+                  margin: const EdgeInsets.all(1.0),
+                  child: const ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    child: CustomWidget.rectangular(
+                      height: 300,
+                    ),
+                  ))
               : snapshot.connectionState == ConnectionState.done
                   ? SizedBox(
                       height: 350,
@@ -46,7 +50,7 @@ class _MostViewProductState extends State<MostViewProduct> {
                           itemBuilder: ((context, index) {
                             Product? p = product![index];
                             String url =
-                                "http://172.18.10.139/agrii-ku/data/images/product/";
+                                "http://172.20.10.2/agrii-ku/data/images/product/";
                             return InkWell(
                               onTap: () {
                                 Navigator.push(
@@ -166,9 +170,15 @@ class _MostViewProductState extends State<MostViewProduct> {
                               ),
                             );
                           })))
-                  : const Center(
-                      child: CircularProgressIndicator(),
-                    );
+                  : Container(
+                      height: 350,
+                      margin: const EdgeInsets.all(1.0),
+                      child: const ClipRRect(
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        child: CustomWidget.rectangular(
+                          height: 300,
+                        ),
+                      ));
         });
   }
 }

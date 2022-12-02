@@ -2,6 +2,7 @@ import 'package:agriiku/model/category_model.dart';
 import 'package:agriiku/model/type_model.dart';
 import 'package:agriiku/service/category_service.dart';
 import 'package:agriiku/service/type_service.dart';
+import 'package:agriiku/style/shimmer.dart';
 import 'package:agriiku/view/categoryproduct.dart';
 import 'package:agriiku/view/jenisproduct.dart';
 import 'package:agriiku/view/widget/mostviewproduct.dart';
@@ -102,12 +103,16 @@ class _HomepageState extends State<Homepage> {
         builder: (context, snapshot) {
           final List<Category>? category = snapshot.data;
           return snapshot.hasError
-              ? Center(
-                  child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [Text("Server sedang bermasalah.")],
-                ))
+              ? Container(
+                  padding: const EdgeInsets.only(left: 5, right: 5),
+                  height: 40,
+                  margin: const EdgeInsets.all(1.0),
+                  child: const ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    child: CustomWidget.rectangular(
+                      height: 300,
+                    ),
+                  ))
               : snapshot.connectionState == ConnectionState.done
                   ? Container(
                       padding: const EdgeInsets.only(left: 5, right: 5),
@@ -138,9 +143,16 @@ class _HomepageState extends State<Homepage> {
                                   style: const TextStyle(fontSize: 10),
                                 ));
                           })))
-                  : const Center(
-                      child: CircularProgressIndicator(),
-                    );
+                  : Container(
+                      padding: const EdgeInsets.only(left: 5, right: 5),
+                      height: 40,
+                      margin: const EdgeInsets.all(1.0),
+                      child: const ClipRRect(
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        child: CustomWidget.rectangular(
+                          height: 300,
+                        ),
+                      ));
         });
   }
 
@@ -150,12 +162,16 @@ class _HomepageState extends State<Homepage> {
         builder: (context, snapshot) {
           final List<Type>? type = snapshot.data;
           return snapshot.hasError
-              ? Center(
-                  child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: const [Text("Server sedang bermasalah.")],
-                ))
+              ? Container(
+                  padding: const EdgeInsets.only(left: 5, right: 5),
+                  height: 40,
+                  margin: const EdgeInsets.all(1.0),
+                  child: const ClipRRect(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    child: CustomWidget.rectangular(
+                      height: 300,
+                    ),
+                  ))
               : snapshot.connectionState == ConnectionState.done
                   ? Container(
                       padding: const EdgeInsets.only(left: 5, right: 5),
@@ -187,9 +203,16 @@ class _HomepageState extends State<Homepage> {
                               ),
                             );
                           })))
-                  : const Center(
-                      child: CircularProgressIndicator(),
-                    );
+                  : Container(
+                      padding: const EdgeInsets.only(left: 5, right: 5),
+                      height: 40,
+                      margin: const EdgeInsets.all(1.0),
+                      child: const ClipRRect(
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        child: CustomWidget.rectangular(
+                          height: 300,
+                        ),
+                      ));
         });
   }
 }

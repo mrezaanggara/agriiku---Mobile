@@ -37,7 +37,7 @@ class _DetailAritcleState extends State<DetailAritcle> {
           ),
           body: WebView(
             initialUrl:
-                'http://172.18.10.139/agrii-ku/article/mobile/${widget.id}',
+                'http://172.20.10.2/agrii-ku/article/mobile/${widget.id}',
             javascriptMode: JavascriptMode.unrestricted,
             onWebViewCreated: (controller) {
               this.controller = controller;

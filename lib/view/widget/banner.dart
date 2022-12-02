@@ -1,5 +1,6 @@
 import 'package:agriiku/model/carousel_model.dart';
 import 'package:agriiku/service/carousel_service.dart';
+import 'package:agriiku/style/shimmer.dart';
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 
@@ -26,19 +27,26 @@ class _BannerIklanState extends State<BannerIklan> {
         builder: (context, snapshot) {
           final List<Carousel>? carousel = snapshot.data;
           if (snapshot.hasError) {
-            return Center(
-                child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: const [Text("Server sedang bermasalah.")],
-            ));
+            return Stack(
+              children: <Widget>[
+                Container(
+                    height: 140,
+                    margin: const EdgeInsets.all(1.0),
+                    child: const ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      child: CustomWidget.rectangular(
+                        height: 300,
+                      ),
+                    ))
+              ],
+            );
           } else if (snapshot.connectionState == ConnectionState.done) {
             return CarouselSlider.builder(
               itemCount: carousel?.length,
               itemBuilder: ((context, index, realIndex) {
                 Carousel? c = carousel![index];
                 String url =
-                    "http://172.18.10.139/agrii-ku/data/images/carousel/";
+                    "http://172.20.10.2/agrii-ku/data/images/carousel/";
                 return Stack(
                   children: <Widget>[
                     Container(
@@ -60,8 +68,18 @@ class _BannerIklanState extends State<BannerIklan> {
               ),
             );
           } else {
-            return const Center(
-              child: CircularProgressIndicator(),
+            return Stack(
+              children: <Widget>[
+                Container(
+                    height: 140,
+                    margin: const EdgeInsets.all(1.0),
+                    child: const ClipRRect(
+                      borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                      child: CustomWidget.rectangular(
+                        height: 300,
+                      ),
+                    ))
+              ],
             );
           }
         });

@@ -72,7 +72,7 @@ class _DetailProductState extends State<DetailProduct> {
                                 itemBuilder: ((context, index, realIndex) {
                                   g = p!.gambar?[index];
                                   String url =
-                                      "http://172.18.10.139/agrii-ku/data/images/product/";
+                                      "http://172.20.10.2/agrii-ku/data/images/product/";
                                   return Stack(
                                     children: <Widget>[
                                       Container(
@@ -194,31 +194,33 @@ class _DetailProductState extends State<DetailProduct> {
                   mode: LaunchMode.externalApplication,
                 );
               },
-              child: Container(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 6, horizontal: 10),
-                  decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.all(Radius.circular(6)),
-                    color: Color(0xFFeeeeee),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: const [
-                      FaIcon(
-                        FontAwesomeIcons.youtube,
-                        color: Color.fromRGBO(213, 0, 0, 1),
+              child: p?.video != ''
+                  ? Container(
+                      padding: const EdgeInsets.symmetric(
+                          vertical: 6, horizontal: 10),
+                      decoration: const BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(6)),
+                        color: Color(0xFFeeeeee),
                       ),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Text(
-                        'Video Produk',
-                        style: TextStyle(
-                            fontSize: 10, fontWeight: FontWeight.w500),
-                      ),
-                    ],
-                  )),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: const [
+                          FaIcon(
+                            FontAwesomeIcons.youtube,
+                            color: Color.fromRGBO(213, 0, 0, 1),
+                          ),
+                          SizedBox(
+                            width: 8,
+                          ),
+                          Text(
+                            'Video Produk',
+                            style: TextStyle(
+                                fontSize: 10, fontWeight: FontWeight.w500),
+                          ),
+                        ],
+                      ))
+                  : const Padding(padding: EdgeInsets.all(1)),
             ),
           )
         ],
