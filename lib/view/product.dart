@@ -27,7 +27,7 @@ class _AllproductsState extends State<Allproducts> {
     }
 
     final Uri uri = Uri.parse(
-        "http://172.20.10.2/agrii-ku/api/product/semuaproduk?pages=$currentPage&limit=$limit");
+        "http://172.18.10.88/agrii-ku/api/product/semuaproduk?pages=$currentPage&limit=$limit");
     final response = await http.get(uri);
     if (response.statusCode == 200) {
       final result = productDataFromJson(response.body);
@@ -96,7 +96,7 @@ class _AllproductsState extends State<Allproducts> {
             itemCount: product.length,
             itemBuilder: ((context, index) {
               Product? p = product[index];
-              String url = "http://172.20.10.2/agrii-ku/data/images/product/";
+              String url = "http://172.18.10.88/agrii-ku/data/images/product/";
               return InkWell(
                 onTap: () {
                   Navigator.push(

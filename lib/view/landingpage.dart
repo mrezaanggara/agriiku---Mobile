@@ -1,3 +1,4 @@
+import 'package:agriiku/view/aboutus.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:agriiku/view/widget/searchbox.dart';
 import 'package:flutter/material.dart';
@@ -44,10 +45,16 @@ class _LandingpageState extends State<Landingpage> {
             children: [
               ListTile(
                 title: const Text("Tentang kami"),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Aboutus(),
+                      ));
+                },
               ),
               ListTile(
-                title: const Text("Cara Penggunaan"),
+                title: const Text("Mitra"),
                 onTap: () {},
               )
             ],

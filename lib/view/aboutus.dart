@@ -3,15 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/gestures.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-class DetailAritcle extends StatefulWidget {
-  final String id;
-  const DetailAritcle({required this.id, Key? key}) : super(key: key);
+class Aboutus extends StatefulWidget {
+  const Aboutus({super.key});
 
   @override
-  State<DetailAritcle> createState() => _DetailAritcleState();
+  State<Aboutus> createState() => _AboutusState();
 }
 
-class _DetailAritcleState extends State<DetailAritcle> {
+class _AboutusState extends State<Aboutus> {
   late WebViewController controller;
 
   @override
@@ -32,12 +31,9 @@ class _DetailAritcleState extends State<DetailAritcle> {
           }
         },
         child: Scaffold(
-          appBar: AppBar(
-            title: const Text("Article"),
-          ),
+          appBar: AppBar(),
           body: WebView(
-            initialUrl:
-                'http://172.18.10.88/agrii-ku/article/mobile/${widget.id}',
+            initialUrl: 'http://172.18.10.88/agrii-ku/about_us/mobile',
             javascriptMode: JavascriptMode.unrestricted,
             onWebViewCreated: (controller) {
               this.controller = controller;
