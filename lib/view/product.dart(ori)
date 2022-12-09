@@ -50,7 +50,7 @@ class _AllproductState extends State<Allproduct> {
                         itemBuilder: ((context, index) {
                           Product? p = product![index];
                           String url =
-                              "http://192.168.1.30/agrii-ku/data/images/product/";
+                              "http://192.168.1.30/data/images/product/";
                           return InkWell(
                             onTap: () {
                               Navigator.push(

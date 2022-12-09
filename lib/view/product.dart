@@ -27,7 +27,7 @@ class _AllproductsState extends State<Allproducts> {
     }
 
     final Uri uri = Uri.parse(
-        "https://staging-agriku.headmasters.id//agrii-ku/api/product/semuaproduk?pages=$currentPage&limit=$limit");
+        "https://staging-agriku.headmasters.id/api/product/semuaproduk?pages=$currentPage&limit=$limit");
     final response = await http.get(uri);
     if (response.statusCode == 200) {
       final result = productDataFromJson(response.body);
@@ -97,7 +97,7 @@ class _AllproductsState extends State<Allproducts> {
             itemBuilder: ((context, index) {
               Product? p = product[index];
               String url =
-                  "https://staging-agriku.headmasters.id//agrii-ku/data/images/product/";
+                  "https://staging-agriku.headmasters.id/data/images/product/";
               return InkWell(
                 onTap: () {
                   Navigator.push(
