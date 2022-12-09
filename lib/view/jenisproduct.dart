@@ -28,7 +28,7 @@ class _JenisProductState extends State<JenisProduct> {
     }
 
     final Uri uri = Uri.parse(
-        "http://172.18.10.88/agrii-ku/api/product/byjenis?pages=$currentPage&limit=$limit&keyword=${widget.keyword}");
+        "https://staging-agriku.headmasters.id//agrii-ku/api/product/byjenis?pages=$currentPage&limit=$limit&keyword=${widget.keyword}");
     final response = await http.get(uri);
     if (response.statusCode == 200) {
       final result = productDataFromJson(response.body);
@@ -100,7 +100,8 @@ class _JenisProductState extends State<JenisProduct> {
             itemCount: product.length,
             itemBuilder: ((context, index) {
               Product? p = product[index];
-              String url = "http://172.18.10.88/agrii-ku/data/images/product/";
+              String url =
+                  "https://staging-agriku.headmasters.id//agrii-ku/data/images/product/";
               return InkWell(
                 onTap: () {
                   Navigator.push(

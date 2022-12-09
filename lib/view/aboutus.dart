@@ -33,7 +33,8 @@ class _AboutusState extends State<Aboutus> {
         child: Scaffold(
           appBar: AppBar(),
           body: WebView(
-            initialUrl: 'http://172.18.10.88/agrii-ku/about_us/mobile',
+            initialUrl:
+                'https://staging-agriku.headmasters.id//agrii-ku/about_us/mobile',
             javascriptMode: JavascriptMode.unrestricted,
             onWebViewCreated: (controller) {
               this.controller = controller;

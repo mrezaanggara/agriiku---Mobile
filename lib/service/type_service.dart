@@ -3,8 +3,8 @@ import 'package:http/http.dart' as http;
 
 class TypeApiService {
   Future<List<Type>?> getType() async {
-    final response = await http
-        .get(Uri.parse("http://172.18.10.88/agrii-ku/api/dashboard/jenis"));
+    final response = await http.get(Uri.parse(
+        "https://staging-agriku.headmasters.id//agrii-ku/api/dashboard/jenis"));
     if (response.statusCode == 200) {
       return typeFromJson(response.body);
     }

@@ -3,8 +3,8 @@ import 'package:http/http.dart' as http;
 
 class CategoryApiService {
   Future<List<Category>?> getCategory() async {
-    final response = await http
-        .get(Uri.parse("http://172.18.10.88/agrii-ku/api/dashboard/kategori"));
+    final response = await http.get(Uri.parse(
+        "https://staging-agriku.headmasters.id//agrii-ku/api/dashboard/kategori"));
     if (response.statusCode == 200) {
       return categoryFromJson(response.body);
     }
