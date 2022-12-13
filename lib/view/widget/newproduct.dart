@@ -50,7 +50,7 @@ class _NewProductState extends State<NewProduct> {
                           itemBuilder: ((context, index) {
                             Product? p = product![index];
                             String url =
-                                "https://staging-agriku.headmasters.id/data/images/product/";
+                                "https://agri-iku.headmasters.id//data/images/product/";
                             return InkWell(
                               onTap: () {
                                 Navigator.push(

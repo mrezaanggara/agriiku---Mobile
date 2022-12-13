@@ -50,7 +50,7 @@ class _MostViewProductState extends State<MostViewProduct> {
                           itemBuilder: ((context, index) {
                             Product? p = product![index];
                             String url =
-                                "https://staging-agriku.headmasters.id/data/images/product/";
+                                "https://agri-iku.headmasters.id//data/images/product/";
                             return InkWell(
                               onTap: () {
                                 Navigator.push(

@@ -46,7 +46,7 @@ class _BannerIklanState extends State<BannerIklan> {
               itemBuilder: ((context, index, realIndex) {
                 Carousel? c = carousel![index];
                 String url =
-                    "https://staging-agriku.headmasters.id/data/images/carousel/";
+                    "https://agri-iku.headmasters.id//data/images/carousel/";
                 return Stack(
                   children: <Widget>[
                     Container(

@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 class ArticleApiService {
   Future<List<Article>?> getArticles() async {
     final response = await http
-        .get(Uri.parse("https://staging-agriku.headmasters.id/api/article"));
+        .get(Uri.parse("https://agri-iku.headmasters.id//api/article"));
     if (response.statusCode == 200) {
       return articleFromJson(response.body);
     }
@@ -13,7 +13,7 @@ class ArticleApiService {
 
   // Future<Article?> getArticle(String id) async {
   //   final response = await http
-  //       .get(Uri.parse('https://staging-agriku.headmasters.id/api/article?id=$id'));
+  //       .get(Uri.parse('https://agri-iku.headmasters.id//api/article?id=$id'));
   //   if (response.statusCode == 200) {
   //     return Article.fromJson(json.decode(response.body)['data']);
   //   }
