@@ -194,7 +194,7 @@ class _CartScreenState extends State<CartScreen> {
           print(chat + CurrencyFormat.convertToIdr(nota, 2));
           launchUrl(
             Uri.parse(
-                'https://wa.me/6281263119830?text=Saya ingin membeli: %0A%0A$chat%0A%0ATotal Harga: ${CurrencyFormat.convertToIdr(nota, 2)}'),
+                'https://wa.me/6282159208662?text=Saya ingin membeli: %0A%0A$chat%0A%0ATotal Harga: ${CurrencyFormat.convertToIdr(nota, 2)}'),
             mode: LaunchMode.externalApplication,
           );
           ScaffoldMessenger.of(context).showSnackBar(
